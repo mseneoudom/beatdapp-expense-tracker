@@ -9,7 +9,7 @@ To delete any expenses, you can click the delete button which will delete the ex
 
 This repository uses:
 - Firebase Database
-- Bootstrap
+- Bootstrap (Although used, I much prefer not using a CSS framework!)
 - SASS and Live SASS Compiler
 - JQuery (CDN)
 - Google Fonts (CDN)
