@@ -1,0 +1,36 @@
+// Global Settings
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #fff;
+  font-size: 2rem;
+}
+
+.bleed {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+
+  margin: 0;
+  padding: 0;
+
+  font-family:'Montserrat';
+}
+
+.addExpenseForm{
+  display:flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  >*{
+    width:30%;
+    margin: 5px;
+
+  }  
+}
