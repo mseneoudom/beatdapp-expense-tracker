@@ -27,10 +27,10 @@ $(document).ready(function(){
         $('.showExpenses').html(
             '<h2>Expense List</h2>'+
             '<div class="row">'+
-                '<h3 class="col-sm-2">Transaction ID</h3>'+
-                '<h3 class="col-sm-2">Expense</h3>'+
-                '<h3 class="col-sm-2">Value</h3>'+
-                '<h3 class="col-sm-2">Category</h3>'+
+                '<h3 class="listHead col-sm-3">Transaction ID</h3>'+
+                '<h3 class="listHead col-sm-2">Expense</h3>'+
+                '<h3 class="listHead col-sm-2">Value</h3>'+
+                '<h3 class="listHead col-sm-2">Category</h3>'+
 
             '</div>'
             
@@ -42,10 +42,10 @@ $(document).ready(function(){
             for (let exp in expenseType){
             $('.showExpenses').append(
                 '<div class="expenseListItem row">'+
-                    '<h4 class="savedExpenseID col-md-2">'+expenseType[exp]['key']+'</h4>'+
-                    '<h4 class="savedExpenseName col-md-2">'+expenseType[exp]['name']+'</h4>'+
-                    '<h4 class="savedExpenseValue col-md-2">$'+expenseType[exp]['value']+'</h4>'+
-                    '<h4 class="savedExpenseType col-md-2">'+expenseType[exp]['type']+'</h4>'+
+                    '<h4 class="expenseData savedExpenseID col-md-3">'+expenseType[exp]['key']+'</h4>'+
+                    '<h4 class="expenseData savedExpenseName col-md-2">'+expenseType[exp]['name']+'</h4>'+
+                    '<h4 class="expenseData savedExpenseValue col-md-2">$'+expenseType[exp]['value']+'</h4>'+
+                    '<h4 class="expenseData savedExpenseType col-md-2">'+expenseType[exp]['type']+'</h4>'+
                     '<button id="deleteExpenseButton" class="col-md-1" value="expenses/'+key+'/'+exp+'">Delete</button>'+
                 '</div>'
             );

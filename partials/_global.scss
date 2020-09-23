@@ -34,3 +34,22 @@ body {
 
   }  
 }
+
+.savedExpenseType{
+  text-transform: uppercase ;
+}
+
+.expenseListItem{
+  border:1px solid black;
+  padding:5px 0;
+
+}
+
+.listHead{
+  @include fontSize(18);
+  font-weight:700;
+}
+
+.expenseData{
+  @include fontSize(16);
+}

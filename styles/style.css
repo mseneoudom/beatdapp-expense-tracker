@@ -286,3 +286,23 @@ body {
   width: 30%;
   margin: 5px;
 }
+
+.savedExpenseType {
+  text-transform: uppercase;
+}
+
+.expenseListItem {
+  border: 1px solid black;
+  padding: 5px 0;
+}
+
+.listHead {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.expenseData {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
