@@ -35,29 +35,30 @@ $(document).ready(function(){
             '</div>'
             
         )
-
+        
         //Display the expenses in the database to the webpage
+        let accumExpense = 0;
         for (let key in firebaseDB){
             let expenseType = firebaseDB[key];
             for (let exp in expenseType){
-            $('.showExpenses').append(
-                '<div class="expenseListItem row">'+
-                    '<h4 class="expenseData savedExpenseID col-md-3">'+expenseType[exp]['key']+'</h4>'+
-                    '<h4 class="expenseData savedExpenseName col-md-2">'+expenseType[exp]['name']+'</h4>'+
-                    '<h4 class="expenseData savedExpenseValue col-md-2">$'+expenseType[exp]['value']+'</h4>'+
-                    '<h4 class="expenseData savedExpenseType col-md-2">'+expenseType[exp]['type']+'</h4>'+
-                    '<button id="deleteExpenseButton" class="col-md-1" value="expenses/'+key+'/'+exp+'">Delete</button>'+
-                '</div>'
-            );
+                accumExpense += Number(expenseType[exp]['value'])
+                $('.showExpenses').append(
+                    '<div class="expenseListItem row">'+
+                        '<h4 class="expenseData savedExpenseID col-md-3">'+expenseType[exp]['key']+'</h4>'+
+                        '<h4 class="expenseData savedExpenseName col-md-2">'+expenseType[exp]['name']+'</h4>'+
+                        '<h4 class="expenseData savedExpenseValue col-md-2">$'+expenseType[exp]['value']+'</h4>'+
+                        '<h4 class="expenseData savedExpenseType col-md-2">'+expenseType[exp]['type']+'</h4>'+
+                        '<button id="deleteExpenseButton" class="col-md-1" value="expenses/'+key+'/'+exp+'">Delete</button>'+
+                    '</div>'
+                );
             }
+            $('.totalExpenses').html(
+                '<h2> Total Expenses $'+accumExpense+'</h2>'
+            )
         }
     })
 
     $('.showExpenses').on('click','#deleteExpenseButton',function(){
         firebase.database().ref($(this).val()).remove();
     })
-
-    // $('.showExpenses .deleteExpenseButton').on('click',function(){
-    //     alert('this works')
-    // })
 }) 
