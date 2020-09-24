@@ -37,12 +37,12 @@ $(document).ready(function(){
         )
         
         //Display the expenses in the database to the webpage
-        let accumExpense = 0;
+        let accumExpense = 0; // A variable to save the expenses
         for (let key in firebaseDB){
             let expenseType = firebaseDB[key];
             for (let exp in expenseType){
-                accumExpense += Number(expenseType[exp]['value'])
-                $('.showExpenses').append(
+                accumExpense += Number(expenseType[exp]['value']) //accumulate the expenses to display total expenses later
+                $('.showExpenses').append( // add each section for each expense saved within our database
                     '<div class="expenseListItem row">'+
                         '<h4 class="expenseData savedExpenseID col-md-3">'+expenseType[exp]['key']+'</h4>'+
                         '<h4 class="expenseData savedExpenseName col-md-2">'+expenseType[exp]['name']+'</h4>'+
@@ -53,12 +53,12 @@ $(document).ready(function(){
                 );
             }
             $('.totalExpenses').html(
-                '<h2> Total Expenses $'+accumExpense+'</h2>'
+                '<h2> Total Expenses $'+accumExpense+'</h2>' // create total expenses section
             )
         }
     })
 
     $('.showExpenses').on('click','#deleteExpenseButton',function(){
-        firebase.database().ref($(this).val()).remove();
+        firebase.database().ref($(this).val()).remove(); // Remove the old inputs to blank
     })
 }) 
